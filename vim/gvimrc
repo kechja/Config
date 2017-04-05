@@ -1,0 +1,8 @@
+:colorscheme boomblack
+
+"Theme modifications.
+"au InsertLeave * hi Cursor guibg=white
+"au InsertEnter * hi Cursor guibg=orange
+"hi Comment         guifg=#555555
+"hi Visual gui=none guifg=khaki guibg=olivedrab cterm=reverse
+

@@ -1,0 +1,71 @@
+"Test Settings
+"--------------------------------------------------------------------------------
+ 
+"Settings
+"--------------------------------------------------------------------------------
+set shiftwidth=2        "Tab key moves n spaces.
+set cursorline          "Highlight cursorline.
+set nonumber            "Don't show numbers.
+set ruler               "Show line, column, & file %.
+set nowrap              "Don't wrap lines.
+set scroll=10           "# of lines for <c-u> & <c-d>           
+set wrapmargin=0        "No right margin. Use textwidth= for hard right cutoff.
+set showmatch           "Show match.
+set autoindent          "Must have autoindent! 
+set autoread            "Automatically read updated files without asking.
+set expandtab           "Insert spaces instead of tab characters.
+set smarttab            "Backspace deletes a tablength when appropriate.
+set showcmd             "Show command.
+set ic smartcase        "Match case sensitive only if there are capital letters.
+set laststatus=2        "Always show status bar.
+set autowrite           "Save automatically before a :n/N, etc.
+set cmdheight=2         "Give a little more space for filenames.
+set cindent             "Use c-syle indenting.
+set nrformats=          "Treat all numbers as decimals when adding/subtracting.
+set thesaurus=~/.vim/thesaurus/kj_thesaurus.txt 
+                        "Set thesaurus file. Access with <c-x><c-t>.
+set wildmenu            "Set up autocomplete / tab behavior.
+set wildmode=list:full  "Show a list of options, and cycle through options.
+set cmdwinheight=30     "Sets command-line-window height.
+
+"Mappings
+"--------------------------------------------------------------------------------
+nmap <silent> <up> :m-2
+nmap <silent> <down> :m+1
+"Close HTML tags.
+map!  F<yf>f>pF<a/hi
+"Move from tag to tag with the [] keys.
+nn <silent> ]t /<[^>][^>]*>:noh
+nn <silent> [t ?<[^>][^>]*>:noh
+nn <silent> ]T /<[^/][^/]*>:noh
+nn <silent> [T ?<[^/][^/]*>:noh
+nn <silent> ]b :bnext
+nn <silent> [b :bprevious
+nn <silent> [B :bfirst
+nn <silent> ]B :blast
+
+" Plugins
+"--------------------------------------------------------------------------------
+filetype plugin on "activates netrw file explorer
+"Set up omnicompletion.
+set omnifunc=syntaxcomplete#Complete
+
+"Can't remember what this is for. May not need this.
+execute pathogen#infect()
+Helptags
+ 
+"Automatically change 'Updated: ' date on files.
+"--------------------------------------------------------------------------------
+autocmd BufWritePre,FileWritePre *.html call Updated()
+fun Updated()
+        exe "normal! mq"
+        if line("$") > 50
+                let updatedLine = 50
+        else 
+                let updatedLine = line("$")
+        endif
+        exe "1," . updatedLine . "g/Updated:[^<][^<]*/ s/Updated:[^<][^<]*/Updated: " . strftime("%b %d, %Y")
+        exe "normal! `q"
+        exe "normal! zz"
+endfun
+"--------------------------------------------------------------------------------

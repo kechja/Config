@@ -1,0 +1,11 @@
+
+# Allow finder to see dot files
+defaults write com.apple.finder AppleShowAllFiles YES 
+
+# Disable Mac launch sound
+Write the following to mute.sh
+  #!/bin/bash
+  osascript -e 'set Volume 0'
+chmod +x mute.sh
+sudo mv mute.sh /usr/local/bin
+sudo defaults write com.apple.loginwindow LogoutHook /usr/local/bin/mute.sh

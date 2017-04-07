@@ -27,7 +27,8 @@ set thesaurus=~/.vim/thesaurus/kj_thesaurus.txt
 set wildmenu            "Set up autocomplete / tab behavior.
 set wildmode=list:full  "Show a list of options, and cycle through options.
 set cmdwinheight=30     "Sets command-line-window height.
-
+set encoding=utf-8
+set runtimepath^=~/.vim/bundle/ctrlp.vim "Not sure this is necessary.
 "Mappings
 "--------------------------------------------------------------------------------
 nmap <silent> <up> :m-2

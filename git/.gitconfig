@@ -1,0 +1,17 @@
+[user]
+	name = Kevin Jackson
+	email = kevin@kevinjacksonart.com
+[core]
+	editor = vim
+[push]
+	default = simple
+[alias]
+	ls = log --oneline
+	ll = log --oneline
+	br = branch
+	ch = checkout
+	co = checkout
+	st = status
+	ac = !git add -A && git commit
+[merge]
+	tool = vimdiff

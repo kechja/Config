@@ -1,0 +1,11 @@
+# CHECK CURRENT CONFIGURATION
+git config --list
+
+# BASIC SETUP
+# COMMAND LINE | YOU CAN ALSO EDIT .gitconfig DIRECTLY
+# .gitconfig LIVES IN ~
+git config --global user.name "Kevin Jackson"
+git config --global user.email kevin@kevinjacksonart.com
+git config --global core.editor vim
+git config --global alias.st status
+

@@ -70,3 +70,10 @@ fun Updated()
         exe "normal! zz"
 endfun
 "--------------------------------------------------------------------------------
+
+" Rainbow parenthesis
+" How to use
+"   run the command manually :RainbowToggle
+" How to adjust colors
+"   Make changes to .vim/plugin/Rainbow.vim 
+let g:rainbow_active = 1

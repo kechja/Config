@@ -1,25 +1,25 @@
 [user]
-	name = Kevin Jackson
-	email = kj31428@gmail.com
+        name = Kevin Jackson
+        email = kj31428@gmail.com
 [core]
-	editor = vim
+        editor = vim
 [push]
-	default = simple
+        default = simple
 [alias]
-	ac = !git add -A && git commit -v
-	br = branch
-	co = checkout
+        ac = !git add -A && git commit -v
+        br = branch
+        co = checkout
         ci = commit
         df = diff
         dfs = diff --staged
         la = log --oneline --decorate --graph --all -30
-	ll = log --oneline -30
+        ll = log --oneline -30
         nb = checkout -b
-	st = status
+        st = status
         ss = status -s
 [merge]
-	tool = vimdiff
+        tool = vimdiff
 [diff]
         tool = vimdiff
 [difftool]
-	prompt = false
+        prompt = false

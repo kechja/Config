@@ -6,12 +6,20 @@
 [push]
 	default = simple
 [alias]
-	ls = log --oneline
-	ll = log --oneline
+	ac = !git add -A && git commit -v
 	br = branch
-	ch = checkout
 	co = checkout
+        ci = commit
+        df = diff
+        dfs = diff --staged
+        la = log --oneline --decorate --graph --all -30
+	ll = log --oneline -30
+        nb = checkout -b
 	st = status
-	ac = !git add -A && git commit
+        ss = status -s
 [merge]
 	tool = vimdiff
+[diff]
+        tool = vimdiff
+[difftool]
+	prompt = false
